@@ -14,12 +14,12 @@ module.exports = {
         root: __dirname,
         extensions: ['', '.ts', '.js'],
         alias: {
-            '@angular2/core': 'node_modules/@angular/core/index.js',
+            '@angular/core': 'node_modules/@angular/core/index.js',
             '@angular/testing': 'node_modules/@angular/core/testing.js',
-            '@angular2/platform/browser': 'node_modules/@angular/platform-browser/index.js',
-            '@angular2/router': 'node_modules/@angular/router-deprecated/index.js',
-            '@angular2/http': 'node_modules/@angular/http/index.js',
-            '@angular2/http/testing': 'node_modules/@angular/http/testing.js',
+            '@angular/platform/browser': 'node_modules/@angular/platform-browser/index.js',
+            '@angular/router': 'node_modules/@angular/router-deprecated/index.js',
+            '@angular/http': 'node_modules/@angular/http/index.js',
+            '@angular/http/testing': 'node_modules/@angular/http/testing.js',
             '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/index.js'
         }
     },
