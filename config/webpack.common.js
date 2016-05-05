@@ -1,17 +1,22 @@
+const PATHS = require('./paths');
+
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const METADATA = {
+    title: 'Ng2 Webpack Config',
+    baseUrl: '/'
+};
 
 module.exports = {
+    metadata: METADATA,
     entry: {
-        main: './src/main',
-        vendor: './src/vendor'
-    },
-    output: {
-        path: './dist',
-        filename: 'bundle.js',
-        publicPath: '/dist/'
+        main: PATHS.main,
+        vendor: PATHS.vendor,
+        polyfills: PATHS.polyfills
     },
     resolve: {
-        root: __dirname,
+        root: PATHS.root,
         extensions: ['', '.ts', '.js'],
         alias: {
             '@angular/core': 'node_modules/@angular/core/index.js',
@@ -34,8 +39,11 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor'],
+            names: ['vendor', 'polyfills'],
             filename: '[name].js'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'index.html'
         })
     ]
 };
