@@ -6,5 +6,6 @@ module.exports = {
     main: path.join(root, 'src/main'),
     vendor: path.join(root, 'src/vendor'),
     polyfills: path.join(root, 'src/polyfills'),
-    dist: path.join(root, 'dist')
+    dist: path.join(root, 'dist'),
+    template: path.join(root, 'index.html')
 };

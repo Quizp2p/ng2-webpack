@@ -12,6 +12,7 @@ const METADATA = webpackMerge(commonConfig.metadata, {
 
 module.exports = webpackMerge(commonConfig, {
     metadata: METADATA,
+    devtool: 'source-map',
     output: {
         path: PATHS.dist,
         filename: 'bundle.js'

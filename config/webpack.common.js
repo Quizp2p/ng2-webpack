@@ -34,6 +34,11 @@ module.exports = {
                 test: /\.ts$/,
                 exclude: /\.d\.ts$/,
                 loader: 'ts-loader'
+            },
+            {
+                test: /\.(html|css)$/,
+                exclude: [PATHS.template],
+                loader: 'raw-loader'
             }
         ]
     },
