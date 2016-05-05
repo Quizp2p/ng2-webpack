@@ -4,8 +4,18 @@ Angular2 webpack config
 
 # Install
 
+```bash
+npm install
 ```
-$ npm install
-$ npm run server:dev
-http://localhost:3000
+
+# Development Mode
+
+```bash
+npm run build:dev
+```
+
+# Production Mode
+
+```bash
+npm run build:prod
 ```

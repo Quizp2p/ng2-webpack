@@ -48,7 +48,7 @@ module.exports = {
             filename: '[name].js'
         }),
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: PATHS.template
         })
     ]
 };
