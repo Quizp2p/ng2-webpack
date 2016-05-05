@@ -11,7 +11,8 @@
     "prebuild:prod": "npm run clean",
     "build:prod": "webpack --config config/webpack.prod.js --progress --profile --colors --display-error-details --display-cached",
     "postinstall": "npm run typings",
-    "typings":"typings install"
+    "typings":"typings install",
+    "docs":"typedoc --options typedoc.json ./src/"
   },
   "author": "yuyangyang",
   "license": "MIT",
