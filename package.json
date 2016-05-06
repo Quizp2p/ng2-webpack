@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "webpack --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base",
+    "build": "webpack --config config/webpack.dev.js --inline --progress --profile --colors --display-error-details --display-cached --content-base",
     "prebuild:dev": "npm run clean",
     "build:dev": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base",
     "prebuild:prod": "npm run clean",

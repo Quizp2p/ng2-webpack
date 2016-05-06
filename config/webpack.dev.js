@@ -29,7 +29,7 @@ module.exports = webpackMerge(commonConfig, {
     },
     plugins: [
         new DefinePlugin({
-            'ENV': JSON.stringify(METADATA.ENV)
+            'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
         })
     ]
 });

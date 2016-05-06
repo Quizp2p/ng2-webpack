@@ -12,6 +12,8 @@ npm install
 
 ```bash
 npm run build:dev
+
+http://localhost:3000
 ```
 
 # Production Mode
