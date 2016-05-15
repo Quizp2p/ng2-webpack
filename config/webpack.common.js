@@ -2,6 +2,7 @@ const PATHS = require('./paths');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const METADATA = {
     title: 'Ng2 Webpack Config',
@@ -39,6 +40,11 @@ module.exports = {
                 test: /\.(html|css)$/,
                 exclude: [PATHS.template],
                 loader: 'raw-loader'
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             }
         ]
     },
@@ -49,6 +55,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: PATHS.template
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ]
 };

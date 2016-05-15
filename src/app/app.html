@@ -1,2 +1,2 @@
-<div>App Component {{list | json}}</div>
-<my-home></my-home>
+<h2 (click)="click()">App Component</h2>
+<my-home [obj]="pobj" (fetch)="getData($event)"></my-home>
