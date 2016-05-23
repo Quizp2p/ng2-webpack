@@ -1,3 +1,7 @@
-p {
+:host {
     color: red;
+}
+
+:host-context(.fff) {
+    color: green;
 }

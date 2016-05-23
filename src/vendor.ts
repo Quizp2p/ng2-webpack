@@ -6,4 +6,5 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/router-deprecated';
 
+import 'rxjs';
 import 'rxjs/add/operator/map';

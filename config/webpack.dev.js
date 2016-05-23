@@ -3,6 +3,8 @@ const PATHS = require('./paths');
 
 const webpackMerge = require('webpack-merge');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const METADATA = webpackMerge(commonConfig.metadata, {
     ENV: 'development',
@@ -12,7 +14,7 @@ const METADATA = webpackMerge(commonConfig.metadata, {
 
 module.exports = webpackMerge(commonConfig, {
     metadata: METADATA,
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     output: {
         path: PATHS.dist,
         filename: 'bundle.js'
@@ -30,6 +32,11 @@ module.exports = webpackMerge(commonConfig, {
     plugins: [
         new DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
-        })
+        }),
+        new CommonsChunkPlugin({
+            names: ['vendor', 'polyfills'],
+            filename: '[name].js'
+        }),
+        new ExtractTextPlugin('styles.css')
     ]
 });

@@ -34,28 +34,27 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /\.d\.ts$/,
-                loader: 'ts-loader'
+                loader: 'ts'
             },
             {
-                test: /\.(html|css)$/,
+                test: /\.html$/,
                 exclude: [PATHS.template],
-                loader: 'raw-loader'
+                loader: 'html'
+            },
+            {
+                test: /\.css$/,               
+                loader: 'raw'
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+                exclude: [/node_modules/, PATHS.app],
+                loader: ExtractTextPlugin.extract('style', 'css')
             }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'polyfills'],
-            filename: '[name].js'
-        }),
         new HtmlWebpackPlugin({
             template: PATHS.template
-        }),
-        new ExtractTextPlugin('style.css')
+        })
     ]
 };

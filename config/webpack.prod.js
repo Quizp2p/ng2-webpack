@@ -8,6 +8,8 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const NoErrorsPlugin = require('webpack/lib/NoErrorsPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const METADATA = webpackMerge(commonConfig.metadata, {
     ENV: 'production'
@@ -18,46 +20,30 @@ module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
     output: {
         path: PATHS.dist,
-        filename: 'bundle.[chunkhash].js',
-        publicPath: '/dist/'
+        filename: 'bundle.[chunkhash].js'
     },
     plugins: [
+        new NoErrorsPlugin(),
         new WebpackMd5Hash(),
         new DedupePlugin(),
+        new ExtractTextPlugin('styles.[contenthash].css'),
         new CommonsChunkPlugin({
-            names: ['vendor'],
+            names: ['vendor', 'polyfills'],
             filename: '[name].[chunkhash].js'
         }),
         new DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
         }),
         new UglifyJsPlugin({
-            // beautify: true, //debug
-            // mangle: false, //debug
-            // dead_code: false, //debug
-            // unused: false, //debug
-            // deadCode: false, //debug
-            // compress: {
-            //   screw_ie8: true,
-            //   keep_fnames: true,
-            //   drop_debugger: false,
-            //   dead_code: false,
-            //   unused: false
-            // }, // debug
-            // comments: true, //debug
-
-            beautify: false, //prod
-
+            beautify: false,
             mangle: {
                 screw_ie8: true,
                 keep_fnames: true
-            }, //prod
-
+            },
             compress: {
                 screw_ie8: true
-            }, //prod
-
-            comments: false //prod
+            },
+            comments: false
         })
     ]
 

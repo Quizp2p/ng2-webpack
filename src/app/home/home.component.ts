@@ -1,23 +1,11 @@
-import {Component, Input, Output, SimpleChange ,EventEmitter} from '@angular/core';
-
-import './home.css';
+import {Component, Input, Output, SimpleChange, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-home',
     template: require('./home.html'),
-    // styles: [require('./home.css')]
+    styles: [require('./home.css')],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-    @Input() obj:string;
-
-    @Output()
-    fetch:EventEmitter<any> = new EventEmitter<any>();
-
-    ngOnChanges(changes:{[propKey:string]:SimpleChange}) {
-        console.log(changes)
-    }
-
-    click(){
-        this.fetch.emit({ff:23});
-    }
 }

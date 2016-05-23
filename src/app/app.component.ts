@@ -1,29 +1,13 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {Http, HTTP_PROVIDERS} from '@angular/http';
+import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 import {HomeComponent} from './home/home.component';
-
-import './app.css';
 
 @Component({
     selector: 'app',
     template: require('./app.html'),
-    // styles: [require('./app.css')],
-    encapsulation: ViewEncapsulation.None,
+    styles: [require('./app.css')],
+    encapsulation: ViewEncapsulation.Native,
     directives: [HomeComponent]
 })
 export class AppComponent {
-    pobj:any = {
-        age: 10
-    };
 
-    constructor() {
-    }
-
-    click() {
-        this.pobj = {age:50};
-    }
-    
-    getData(params){
-        console.log(params);
-    }
 }
