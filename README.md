@@ -11,7 +11,7 @@ npm install
 # Development Mode
 
 ```bash
-npm run build:dev
+npm run dev
 
 http://localhost:3000
 ```
@@ -19,5 +19,5 @@ http://localhost:3000
 # Production Mode
 
 ```bash
-npm run build:prod
+npm run build
 ```
