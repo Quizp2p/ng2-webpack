@@ -32,7 +32,7 @@ module.exports = webpackMerge(commonConfig, {
             filename: '[name].[chunkhash].js'
         }),
         new DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
+            'process.env.ENV': JSON.stringify(METADATA.ENV)
         }),
         new UglifyJsPlugin({
             beautify: false,
@@ -41,10 +41,10 @@ module.exports = webpackMerge(commonConfig, {
                 keep_fnames: true
             },
             compress: {
-                screw_ie8: true
+                screw_ie8: true,
+                warnings: false
             },
             comments: false
         })
     ]
-
 });

@@ -31,7 +31,7 @@ module.exports = webpackMerge(commonConfig, {
     },
     plugins: [
         new DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
+            'process.env.ENV': JSON.stringify(METADATA.ENV)
         }),
         new CommonsChunkPlugin({
             names: ['vendor', 'polyfills'],
