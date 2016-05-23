@@ -42,19 +42,20 @@ module.exports = {
                 loader: 'html'
             },
             {
-                test: /\.css$/,               
-                loader: 'raw'
+                test: /\.less$/,
+                exclude: [/node_modules/, PATHS.app],
+                loader: ExtractTextPlugin.extract('style', 'css!less')
             },
             {
-                test: /\.css$/,
-                exclude: [/node_modules/, PATHS.app],
-                loader: ExtractTextPlugin.extract('style', 'css')
+                test: /\.less$/,
+                include: [PATHS.app],
+                loaders: ['raw', 'less']
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: PATHS.template
+            template: PATHS.template            
         })
     ]
 };

@@ -4,7 +4,7 @@ import {Component, Input, Output, SimpleChange, EventEmitter, ChangeDetectionStr
     moduleId: module.id,
     selector: 'my-home',
     template: require('./home.html'),
-    styles: [require('./home.css')],
+    styles: [require('./home.less')],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {

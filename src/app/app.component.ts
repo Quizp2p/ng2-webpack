@@ -4,7 +4,7 @@ import {HomeComponent} from './home/home.component';
 @Component({
     selector: 'app',
     template: require('./app.html'),
-    styles: [require('./app.css')],
+    styles: [require('./app.less')],
     encapsulation: ViewEncapsulation.Native,
     directives: [HomeComponent]
 })
