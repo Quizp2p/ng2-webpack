@@ -3,18 +3,19 @@ const PATHS = require('./paths');
 
 const webpackMerge = require('webpack-merge');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const METADATA = webpackMerge(commonConfig.metadata, {
     ENV: 'development',
     host: 'localhost',
-    port: 3000
+    port: 3200
 });
 
 module.exports = webpackMerge(commonConfig, {
     metadata: METADATA,
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     output: {
         path: PATHS.dist,
         filename: 'bundle.js'
@@ -37,6 +38,12 @@ module.exports = webpackMerge(commonConfig, {
             names: ['vendor', 'polyfills'],
             filename: '[name].js'
         }),
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new UglifyJsPlugin({           
+            compress: {
+                warnings: false
+            },
+            comments: false
+        })
     ]
 });

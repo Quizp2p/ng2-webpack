@@ -57,5 +57,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: PATHS.template            
         })
-    ]
+    ],
+    htmlLoader: {
+        minimize: true,
+        removeAttributeQuotes: false,
+        caseSensitive: true,
+        customAttrSurround: [
+            [/#/, /(?:)/],
+            [/\*/, /(?:)/],
+            [/\[?\(?/, /(?:)/]
+        ],
+        customAttrAssign: [/\)?\]?=/]
+    }
 };

@@ -1,11 +1,15 @@
-import {Component, Input, Output, SimpleChange, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'my-home',
     template: require('./home.html'),
-    styles: [require('./home.less')],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styles: [require('./home.less')]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+    constructor() {
+        
+    }
+
+    ngOnInit() {
+    }
 }
