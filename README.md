@@ -11,9 +11,9 @@ npm install
 # Development Mode
 
 ```bash
-npm run dev
+npm start
 
-http://localhost:3000
+http://localhost:3200
 ```
 
 # Production Mode
