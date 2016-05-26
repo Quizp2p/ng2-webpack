@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'my-about',
@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
     styles: [require('./about.less')]
 })
 export class AboutComponent implements OnInit {
+    title: string = 'About Component';
+
     constructor() {
 
     }

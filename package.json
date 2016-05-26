@@ -4,7 +4,7 @@
   "description": "Angular2 webpack config",
   "scripts": {
     "test": "karma start ./config/karma.conf.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist tslint",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base",
     "build": "npm run clean && webpack --config config/webpack.prod.js --progress --profile --colors --display-error-details --display-cached",
     "typings": "typings install",
@@ -59,6 +59,8 @@
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.2",
+    "tslint": "^3.10.2",
+    "tslint-loader": "^2.1.4",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "webpack": "^1.13.0",

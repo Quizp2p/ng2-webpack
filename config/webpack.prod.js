@@ -46,5 +46,14 @@ module.exports = webpackMerge(commonConfig, {
             },
             comments: false
         })
-    ]
+    ],
+    tslint: {
+        fileOutput: {
+            dir: './tslint/',
+            ext: 'xml',
+            clean: true,
+            header: '<?xml version=\'1.0\' encoding=\'utf-8\'?>\n<checkstyle version=\'5.7\'>\n',
+            footer: '</checkstyle>'
+        }
+    }
 });

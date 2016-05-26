@@ -2,10 +2,10 @@
  * These are globally available pipes in any template
  */
 
-import {PLATFORM_PIPES} from '@angular/core';
+import { PLATFORM_PIPES } from '@angular/core';
 
 // Angular 2 Material
-import {MATERIAL_PIPES} from './material';
+import { MATERIAL_PIPES } from './material';
 
 // application_pipes: pipes that are global through out the application
 export const APPLICATION_PIPES = [

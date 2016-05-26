@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'my-home',
@@ -6,8 +6,9 @@ import {Component, OnInit} from '@angular/core';
     styles: [require('./home.less')]
 })
 export class HomeComponent implements OnInit {
+    title: string = 'Home Component';
+
     constructor() {
-        
     }
 
     ngOnInit() {

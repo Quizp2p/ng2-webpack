@@ -39,7 +39,7 @@ module.exports = webpackMerge(commonConfig, {
             filename: '[name].js'
         }),
         new ExtractTextPlugin('styles.css'),
-        new UglifyJsPlugin({           
+        new UglifyJsPlugin({
             compress: {
                 warnings: false
             },

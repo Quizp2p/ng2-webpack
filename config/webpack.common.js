@@ -30,6 +30,12 @@ module.exports = {
         }
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.ts$/,
+                loader: 'tslint'
+            }
+        ],
         loaders: [
             {
                 test: /\.ts$/,
@@ -55,7 +61,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: PATHS.template            
+            template: PATHS.template
         })
     ],
     htmlLoader: {
@@ -68,5 +74,9 @@ module.exports = {
             [/\[?\(?/, /(?:)/]
         ],
         customAttrAssign: [/\)?\]?=/]
+    },
+    tslint: {
+        configuration: require('../tslint.json'),       
+        failOnHint: true       
     }
 };
