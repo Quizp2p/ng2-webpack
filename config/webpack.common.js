@@ -3,6 +3,7 @@ const PATHS = require('./paths');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const METADATA = {
     title: 'Ng2 Webpack Config',
@@ -55,14 +56,18 @@ module.exports = {
             {
                 test: /\.less$/,
                 include: [PATHS.app],
-                loaders: ['raw', 'less']
+                loader: 'raw!less'
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: PATHS.template
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: PATHS.assets,
+            to: PATHS.dist
+        }])
     ],
     htmlLoader: {
         minimize: true,
@@ -76,7 +81,7 @@ module.exports = {
         customAttrAssign: [/\)?\]?=/]
     },
     tslint: {
-        configuration: require('../tslint.json'),       
-        failOnHint: true       
+        configuration: require('../tslint.json'),
+        failOnHint: true
     }
 };
