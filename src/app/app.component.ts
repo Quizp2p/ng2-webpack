@@ -3,7 +3,7 @@ import { RouteConfig } from '@angular/router-deprecated';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { MyUppercasePipe } from './pipes/my-uppercase.pipe';
+import { MyUppercasePipe } from './pipes';
 
 @Component({
     selector: 'app',

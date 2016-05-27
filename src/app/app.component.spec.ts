@@ -14,6 +14,6 @@ describe('App', () => {
     ]);
 
     it('should have default title', inject([AppComponent], (app: AppComponent) => {
-        expect(app.title).toEqual('App Component');
+        expect(app.title).toBe('App Component');
     }));
 });

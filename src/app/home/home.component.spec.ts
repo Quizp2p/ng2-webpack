@@ -1,4 +1,4 @@
-import{
+import {
     it,
     inject,
     describe,
@@ -13,7 +13,7 @@ describe('About', () => {
         HomeComponent
     ]);
 
-    it('should have default title', inject([HomeComponent], (home: HomeComponent)=> {
-        expect(home.title).toEqual('Home Component');
+    it('should have default title', inject([HomeComponent], (home: HomeComponent) => {
+        expect(home.title).toBe('Home Component');
     }));
 });

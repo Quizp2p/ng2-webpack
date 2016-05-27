@@ -1,4 +1,4 @@
-import{
+import {
     it,
     inject,
     describe,
@@ -6,14 +6,14 @@ import{
     expect
 } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
+import{ AboutComponent } from './about.component';
 
-describe('About', ()=> {
-    beforeEachProviders(()=>[
+describe('About', () => {
+    beforeEachProviders(() => [
         AboutComponent
     ]);
 
-    it('should have default title', inject([AboutComponent], (about:AboutComponent)=> {
-        expect(about.title).toEqual('About Component');
+    it('should have default title', inject([AboutComponent], (about: AboutComponent)=> {
+        expect(about.title).toBe('About Component');
     }));
 });

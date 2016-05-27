@@ -15,18 +15,18 @@ describe('MyUppercasePipe', () => {
     });
 
     it('transforms "abc" to "ABC"', () => {
-        expect(pipe.transform('abc')).toEqual('ABC');
+        expect(pipe.transform('abc')).toBe('ABC');
     });
 
     it('transforms null to ""', () => {
-        expect(pipe.transform(null)).toEqual('');
+        expect(pipe.transform(null)).toBe('');
     });
 
     it('transforms undefined to ""', () => {
-        expect(pipe.transform(undefined)).toEqual('');
+        expect(pipe.transform(undefined)).toBe('');
     });
 
     it('transforms "" to ""', () => {
-        expect(pipe.transform('')).toEqual('');
+        expect(pipe.transform('')).toBe('');
     });
 });
