@@ -18,7 +18,11 @@ webpack
 
 karma
 
-## Useage
+### code lint
+
+tslint
+
+## Usage
 
 ### download
 
