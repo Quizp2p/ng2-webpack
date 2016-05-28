@@ -32,7 +32,7 @@ git clone https://github.com/yuyang041060120/ng2-webpack.git
 npm install
 ```
 
-### development mode
+### development
 
 ```bash
 npm start
@@ -40,7 +40,13 @@ npm start
 http://localhost:3200
 ```
 
-### production mode
+### test
+
+```bash
+npm run test
+```
+
+### production
 
 ```bash
 npm run build
