@@ -1,14 +1,38 @@
-# ng2-webpack
+# Angular2 Frontend Architecture Design
 
-Angular2 webpack config
+## Details
 
-# Install
+### package manager
+
+npm
+
+### css pre processor
+
+less
+
+### module manager and build tool
+
+webpack
+
+### unit test
+
+karma
+
+## Useage
+
+### download
+
+```bash
+git clone https://github.com/yuyang041060120/ng2-webpack.git
+```
+
+### install
 
 ```bash
 npm install
 ```
 
-# Development Mode
+### development mode
 
 ```bash
 npm start
@@ -16,8 +40,14 @@ npm start
 http://localhost:3200
 ```
 
-# Production Mode
+### production mode
 
 ```bash
 npm run build
 ```
+
+## License
+MIT
+
+## Links
+[angular2 webpack starter](https://github.com/AngularClass/angular2-webpack-starter)
