@@ -1,28 +1,30 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { RouteConfig } from '@angular/router-deprecated';
-
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { MyUppercasePipe } from './pipes';
+import { Component } from '@angular/core';
+import {
+    REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Validators,
+    FormBuilder
+} from '@angular/forms';
 
 @Component({
     selector: 'app',
     template: require('./app.html'),
-    styles: [require('./app.less')],
-    encapsulation: ViewEncapsulation.Native,
-    pipes: [MyUppercasePipe]
+    directives: [REACTIVE_FORM_DIRECTIVES]
 })
-@RouteConfig([
-    {path: '/', name: 'Home', component: HomeComponent, useAsDefault: true},
-    {path: '/about', name: 'About', component: AboutComponent}
-])
-export class AppComponent implements OnInit {
-    title: string = 'App Component';
+export class AppComponent {
+    title: 'csx';
+    form: FormGroup;
 
-    constructor() {
+    constructor(formBuilder: FormBuilder) {
+        this.form = formBuilder.group({
+            username: ['xxx']
+        });
 
+        //
+        // this.form = new FormGroup({
+        //     field: new FormControl('', Validators.required)
+        // });
     }
 
-    ngOnInit() {
+    onSubmit(f) {
+        console.log(f);
     }
 }

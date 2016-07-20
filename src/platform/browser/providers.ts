@@ -4,21 +4,15 @@
 
 // Angular 2
 import { provide } from '@angular/core';
-import { FORM_PROVIDERS, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
-
-import { MATERIAL_PROVIDERS } from './material';
 
 /*
  * Application Providers/Directives/Pipes
  * providers/directives/pipes that only live in our browser environment
  */
 export const APPLICATION_PROVIDERS = [
-    FORM_PROVIDERS,
     HTTP_PROVIDERS,
-    MATERIAL_PROVIDERS,
-    ROUTER_PROVIDERS,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
 ];
 

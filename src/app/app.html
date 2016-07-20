@@ -1,6 +1,5 @@
-<h3>{{title}}</h3>
-
-<div>{{'xxx' | myUppercase}}</div>
-
-<a [routerLink]="['About']">About</a>
-<router-outlet></router-outlet>
+<h1>app</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input type="text" ngModel name="username"/>
+    <p *ngIf="form.controls?.field?.errors?.required">error message</p>
+</form>
